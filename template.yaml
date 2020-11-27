@@ -19,7 +19,7 @@ Resources:
         Properties:
             Handler: save-achievement-stats.default
             Runtime: nodejs10.x
-            Timeout: 4
+            Timeout: 3
             CodeUri: ./dist/save-achievement-stats
             MemorySize: 128
             ReservedConcurrentExecutions: 40
@@ -34,7 +34,7 @@ Resources:
                 - AWSLambdaVPCAccessExecutionRole
                 - AmazonSESFullAccess
                 - SecretsManagerReadWrite
-                # - arn:aws:iam::478062583808:policy/CloudWatchPolicyForLambda # See https://stackoverflow.com/questions/51166504/disable-cloudwatch-to-monitor-logs-for-lambda-function
+                - arn:aws:iam::478062583808:policy/CloudWatchPolicyForLambda # See https://stackoverflow.com/questions/51166504/disable-cloudwatch-to-monitor-logs-for-lambda-function
             Tags:
                 LambdaName: api-save-achievements
             Events:
